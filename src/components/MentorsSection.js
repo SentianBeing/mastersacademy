@@ -110,7 +110,7 @@ export default function MentorsSection() {
           <div className={styles.directorImgWrapper}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
-              src="https://res.cloudinary.com/der2xk0cv/image/upload/v1781871348/Screenshot_2026-06-18_235459-removebg-preview_kxoxdj.png" 
+              src="https://res.cloudinary.com/der2xk0cv/image/upload/v1781878748/ffggh_uml335.png" 
               alt="Jomon K. Thomas - Director" 
               className={styles.directorImg}
             />
