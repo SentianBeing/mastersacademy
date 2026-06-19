@@ -13,6 +13,7 @@ export async function POST(request) {
     if (type === 'jee') typeLabel = "JEE Course Inquiry Form";
     if (type === 'keam') typeLabel = "KEAM Course Inquiry Form";
     if (type === 'neet') typeLabel = "NEET Course Inquiry Form";
+    if (type === 'school_enquiry') typeLabel = "School Tuition Inquiry (5th-12th)";
 
     let fieldsHtml = "";
     
