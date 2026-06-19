@@ -92,14 +92,44 @@ export default function GoogleReviews() {
   };
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [cardsToShow, setCardsToShow] = useState(3);
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % (reviews.length - 2)); // show 3 at a time, scroll
-  };
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 650) {
+        setCardsToShow(1);
+      } else if (window.innerWidth <= 991) {
+        setCardsToShow(2);
+      } else {
+        setCardsToShow(3);
+      }
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleNext = React.useCallback(() => {
+    setCurrentIndex((prev) => {
+      const maxIndex = reviews.length - cardsToShow;
+      return prev >= maxIndex ? 0 : prev + 1;
+    });
+  }, [cardsToShow, reviews.length]);
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 1 + (reviews.length - 2)) % (reviews.length - 2));
+    setCurrentIndex((prev) => {
+      const maxIndex = reviews.length - cardsToShow;
+      return prev <= 0 ? maxIndex : prev - 1;
+    });
   };
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      handleNext();
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [handleNext]);
 
   return (
     <section className={styles.reviewsSection} id="reviews">
@@ -168,7 +198,7 @@ export default function GoogleReviews() {
           <div className={styles.sliderViewport}>
             <div 
               className={styles.sliderTrack}
-              style={{ transform: `translateX(-${currentIndex * 33.333}%)` }}
+              style={{ transform: `translateX(calc(-${currentIndex} * (100% + 20px) / ${cardsToShow}))` }}
             >
               {reviews.map((rev, idx) => (
                 <div key={idx} className={styles.reviewCard}>
@@ -200,7 +230,7 @@ export default function GoogleReviews() {
 
           {/* Dots Indicator */}
           <div className={styles.dotsRow}>
-            {reviews.slice(0, reviews.length - 2).map((_, idx) => (
+            {reviews.slice(0, Math.max(1, reviews.length - cardsToShow + 1)).map((_, idx) => (
               <button
                 key={idx}
                 className={`${styles.dot} ${currentIndex === idx ? styles.activeDot : ''}`}
