@@ -1,0 +1,93 @@
+.admissionsSection {
+  background-color: var(--bg-white);
+  padding: 140px 0 80px; /* larger top padding to prevent overlapping with stats bar */
+}
+
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: stretch;
+  background-color: var(--primary-navy-dark);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.photoSide {
+  background-size: cover;
+  background-position: center;
+  min-height: 380px;
+}
+
+.contentSide {
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+.subtitle {
+  color: var(--accent-red);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-family: var(--font-sans);
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 30px;
+}
+
+.applyBtn {
+  align-self: flex-start;
+  background-color: var(--accent-green);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.applyBtn:hover {
+  background-color: var(--accent-green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(17, 179, 91, 0.4);
+}
+
+@media (max-width: 991px) {
+  .admissionsSection {
+    padding: 80px 0 60px;
+  }
+  
+  .layoutGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .photoSide {
+    min-height: 300px;
+  }
+  
+  .contentSide {
+    padding: 40px 30px;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+}

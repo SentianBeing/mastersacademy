@@ -1,0 +1,338 @@
+.sectionWrapper {
+  position: relative;
+  background: #3d000e; /* Deepest wine base */
+  overflow: hidden;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  height: 480px;
+  display: flex;
+  align-items: center;
+}
+
+/* Background Depth with layered organic waves and glowing circles */
+.backgroundGraphics {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Left side dark ambient gradient */
+.bgCircle1 {
+  position: absolute;
+  width: 900px;
+  height: 900px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(122, 12, 36, 0.3) 0%, rgba(77, 0, 19, 0.95) 75%);
+  top: -200px;
+  left: -250px;
+  filter: blur(40px);
+}
+
+/* Organic curved flow on top-left (mimicking the wavy pattern in reference) */
+.bgCircle2 {
+  position: absolute;
+  width: 800px;
+  height: 500px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(77, 0, 19, 0.8) 0%, rgba(122, 12, 36, 0.15) 100%);
+  top: -150px;
+  left: -100px;
+  transform: rotate(-15deg);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Behind student radiating wave 1 */
+.bgCircle3 {
+  position: absolute;
+  width: 750px;
+  height: 750px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(122, 12, 36, 0.25) 0%, rgba(61, 0, 14, 0.8) 70%);
+  bottom: -200px;
+  right: -100px;
+  filter: blur(20px);
+}
+
+/* Behind student radiating ring (fine line) */
+.bgRing1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  right: -50px;
+  bottom: -150px;
+}
+
+.bgRing2 {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  border: 1px solid rgba(209, 161, 41, 0.05);
+  right: 25px;
+  bottom: -75px;
+}
+
+/* Container */
+.sectionContainer {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  gap: 30px;
+  height: 100%;
+  width: 100%;
+}
+
+/* Left Content Column */
+.contentCol {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  padding: 60px 0;
+  z-index: 3;
+}
+
+/* Tagline Badge */
+.taglineBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1.5px solid rgba(209, 161, 41, 0.2);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold-color);
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+.badgeIcon {
+  color: var(--gold-color);
+}
+
+/* Main Heading (Proportionate, not overly huge) */
+.mainHeading {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.headingAccent {
+  color: #ffffff;
+}
+
+/* Phone Group (Clean styling, smaller than title) */
+.phoneGroup {
+  margin-bottom: 30px;
+}
+
+.phoneNumbers {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 28px;
+  font-weight: 750;
+  letter-spacing: -0.5px;
+}
+
+.phoneLink {
+  color: var(--gold-color);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.phoneLink:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.phoneDivider {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Action Button */
+.buttonWrapper {
+  display: flex;
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--gold-color);
+  color: var(--maroon-dark);
+  border: none;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 750;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(209, 161, 41, 0.2);
+}
+
+.actionBtn:hover {
+  background-color: #ffffff;
+  color: var(--maroon-medium);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.btnArrow {
+  transition: transform 0.25s ease;
+}
+
+.actionBtn:hover .btnArrow {
+  transform: translateX(4px);
+}
+
+/* Right Image Column (Aligns bottom, sits precisely at baseline) */
+.imageCol {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  align-self: flex-end;
+}
+
+.studentImageWrapper {
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  height: 100%;
+  position: relative;
+}
+
+.studentBgCircle {
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.01) 70%);
+  z-index: 1;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.studentDottedCircle {
+  position: absolute;
+  width: 470px;
+  height: 470px;
+  border-radius: 50%;
+  border: 1.5px dotted rgba(255, 255, 255, 0.15);
+  z-index: 2;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.studentImage {
+  width: 100%;
+  height: auto;
+  max-height: 440px; /* Constrains image height, matching baseline */
+  object-fit: contain;
+  display: block;
+  margin-bottom: -1px; /* Prevents tiny sub-pixel gap at the bottom */
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.25));
+  transform: scale(1.18);
+  transform-origin: bottom center;
+  z-index: 3;
+}
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .mainHeading {
+    font-size: 32px;
+  }
+  
+  .phoneNumbers {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 991px) {
+  .sectionWrapper {
+    min-height: auto;
+    padding: 60px 0 0 0; /* No bottom padding so image stays at baseline */
+  }
+  
+  .sectionContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .contentCol {
+    align-items: center;
+    text-align: center;
+    padding: 0 0 20px 0;
+  }
+  
+  .taglineBadge {
+    align-self: center;
+  }
+  
+  .phoneNumbers {
+    justify-content: center;
+    font-size: 24px;
+  }
+  
+  .imageCol {
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .studentImageWrapper {
+    max-width: 440px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .sectionWrapper {
+    padding-top: 50px;
+  }
+
+  .mainHeading {
+    font-size: 26px;
+  }
+  
+  .phoneNumbers {
+    font-size: 20px;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .phoneDivider {
+    display: none;
+  }
+  
+  .actionBtn {
+    padding: 12px 28px;
+    font-size: 14px;
+  }
+}

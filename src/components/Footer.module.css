@@ -1,0 +1,274 @@
+.footerWrapper {
+  background-color: #3b000d; /* even darker maroon for depth */
+  color: rgba(255, 255, 255, 0.85);
+  padding: 70px 0 0 0;
+  border-top: 2px solid rgba(255, 255, 255, 0.05);
+  font-family: var(--font-sans);
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 2.2fr 1.2fr 1.2fr 2.2fr 2fr;
+  gap: 32px;
+}
+
+/* Brand Column */
+.brandCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoArea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+}
+
+.logoImage {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logoImage:hover {
+  transform: scale(1.02);
+}
+
+.brandDesc {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-top: 18px;
+  margin-bottom: 24px;
+}
+
+.socialsRow {
+  display: flex;
+  gap: 10px;
+}
+
+.socialCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.socialCircle:hover {
+  background-color: var(--gold-color);
+  color: var(--maroon-dark);
+  transform: translateY(-2px);
+}
+
+/* Headings in Columns */
+.colHeading {
+  font-size: 15px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  position: relative;
+  width: fit-content;
+  padding-bottom: 6px;
+}
+
+.colHeading::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: var(--gold-color);
+  border-radius: 1px;
+}
+
+/* Navigation Lists */
+.linksList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.linksList a {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  transition: all 0.25s ease;
+  display: inline-block;
+}
+
+.linksList a:hover {
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* Contact Details */
+.contactList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contactItem {
+  display: flex;
+  gap: 10px;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.contactIcon {
+  color: var(--gold-color);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Map Column */
+.mapCol {
+  display: flex;
+  align-items: flex-start;
+}
+
+.mapContainer {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.mapIframe {
+  width: 100%;
+  height: 180px;
+  display: block;
+}
+
+/* Bottom Bar */
+.bottomBar {
+  margin-top: 50px;
+  padding: 25px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bottomContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.policyLinks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.policyLinks a {
+  transition: color 0.2s ease;
+}
+
+.policyLinks a:hover {
+  color: #ffffff;
+}
+
+.divider {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive grid breaks */
+@media (max-width: 1199px) {
+  .footerGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+  
+  .brandCol {
+    grid-column: span 3;
+    max-width: 500px;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .brandCol {
+    grid-column: span 2;
+  }
+  
+  .mapCol {
+    grid-column: span 2;
+    max-width: 320px;
+  }
+  
+  .bottomContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .brandCol, .mapCol {
+    grid-column: span 1;
+  }
+}
+
+.contactLink {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.25s ease;
+  text-decoration: none;
+}
+
+.contactLink:hover {
+  color: #ffffff;
+}
+
+/* Floating Sticky WhatsApp Button */
+.whatsappFloat {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.whatsappFloat:hover {
+  transform: scale(1.08) translateY(-2px);
+  background-color: #20ba5a;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}

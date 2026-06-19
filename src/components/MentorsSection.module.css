@@ -1,0 +1,337 @@
+.sectionWrapper {
+  position: relative;
+  background: #4d0013; /* Dark Maroon */
+  background: linear-gradient(135deg, var(--maroon-dark) 0%, #30000a 100%);
+  height: 360px; /* Reduced height to match reference */
+  overflow: visible; /* Allows head to pop up out of the top frame */
+  color: #ffffff;
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 10;
+}
+
+.bgDecoration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden; /* Clips background decorative elements so they don't leak out */
+}
+
+.circleOrnament {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  top: -100px;
+  left: 30%;
+}
+
+.sectionContainer {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  gap: 20px;
+  height: 100%;
+  width: 100%;
+}
+
+/* Left Column */
+.leftCol {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.heading {
+  font-size: 26px; /* Reduced from 32px to fit height */
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.goldText {
+  color: var(--gold-color);
+}
+
+.whiteText {
+  color: #ffffff;
+}
+
+.pointsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.pointRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkIconWrapper {
+  color: var(--gold-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.checkIcon {
+  color: var(--gold-color);
+}
+
+.pointText {
+  font-size: 14px; /* Reduced from 15px */
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: -0.1px;
+}
+
+.btnWrapper {
+  display: flex;
+}
+
+.meetBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+  padding: 10px 24px; /* Slightly tighter */
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  background: transparent;
+}
+
+.meetBtn:hover {
+  background-color: #ffffff;
+  color: var(--maroon-dark);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.btnArrow {
+  transition: transform 0.2s ease;
+}
+
+.meetBtn:hover .btnArrow {
+  transform: translateX(3px);
+}
+
+/* Center Column (Director image pop-up) */
+.centerCol {
+  flex: 1.1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+}
+
+.directorImgWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 410px; /* Made taller than the wrapper (360px) to pop up */
+  width: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible; /* Let the image pop out */
+  z-index: 15;
+}
+
+.directorImg {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: -1px;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3));
+}
+
+/* Right Column (Speech Bubble) */
+.rightCol {
+  flex: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align closer to Jomon */
+  z-index: 5;
+}
+
+.speechBubble {
+  position: relative;
+  background: linear-gradient(135deg, var(--maroon-medium) 0%, var(--maroon-dark) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  padding: 20px; /* Reduced from 24px */
+  width: 100%;
+  max-width: 230px; /* Tighter width */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  color: #ffffff;
+  text-align: left;
+  margin-left: -65px; /* Pull speech bubble close next to director's shoulder */
+}
+
+.speechBubble::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -7px;
+  transform: translateY(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background-color: var(--maroon-medium);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.signatureText {
+  font-family: var(--font-script);
+  font-size: 22px; /* Reduced from 26px */
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1;
+  margin-bottom: 6px;
+  user-select: none;
+}
+
+.mentorName {
+  font-size: 14px; /* Reduced from 15px */
+  font-weight: 750;
+  color: #ffffff;
+  margin-bottom: 2px;
+  letter-spacing: -0.2px;
+}
+
+.mentorTitle {
+  font-size: 10px; /* Reduced from 11px */
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+  font-weight: 550;
+}
+
+.divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+}
+
+.bubbleDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detailRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bulletPoint {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--gold-color);
+  flex-shrink: 0;
+}
+
+.detailText {
+  font-size: 11px; /* Reduced from 12px */
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsiveness */
+@media (max-width: 991px) {
+  .sectionWrapper {
+    height: auto;
+    overflow: hidden; /* Prevent leaking on mobile stack */
+    padding: 50px 0;
+  }
+
+  .sectionContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .leftCol {
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+  }
+
+  .heading {
+    font-size: 26px;
+  }
+
+  .pointsList {
+    align-items: center;
+  }
+
+  .btnWrapper {
+    justify-content: center;
+  }
+
+  .centerCol {
+    height: auto;
+    width: 100%;
+    align-items: center;
+  }
+
+  .directorImgWrapper {
+    position: relative;
+    height: auto;
+    transform: none;
+    left: auto;
+  }
+
+  .directorImg {
+    max-height: 320px;
+  }
+
+  .rightCol {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .speechBubble {
+    margin-left: 0;
+    margin-top: 15px;
+  }
+
+  .speechBubble::before {
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: none;
+    border-right: none;
+  }
+}
