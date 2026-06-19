@@ -58,13 +58,13 @@
 }
 
 .mainTitle {
-  font-family: 'Clash Display', var(--font-sans);
-  font-size: 62px;
-  font-weight: 700;
-  line-height: 1.05;
-  color: #1a1a1e; /* dark charcoal */
+  font-family: var(--font-sans);
+  font-size: 58px;
+  font-weight: 800;
+  line-height: 1.12;
+  color: #111115;
   margin-bottom: 24px;
-  letter-spacing: -0.025em; /* tighter letter spacing */
+  letter-spacing: -0.02em;
 }
 
 /* Premium gradient for YOUR FUTURE */
@@ -77,10 +77,11 @@
 }
 
 .description {
-  font-size: 16.5px;
-  color: #4b5563; /* improved readability support text */
+  font-size: 16px;
   line-height: 1.65;
+  color: #555560;
   margin-bottom: 35px;
+  max-width: 500px;
 }
 
 /* Stats Row: Elevated to premium cards */
