@@ -122,8 +122,8 @@ export default function JeeCoachingPage() {
   const features = [
     {
       icon: <Award size={24} />,
-      title: "Senior IITian Faculty",
-      text: "Acquire tips and rigorous problem-solving skills from veteran IIT/NIT graduates and top engineering experts."
+      title: "Statewide Expert Faculty",
+      text: "Acquire tips and rigorous problem-solving skills from veteran educators and top engineering experts."
     },
     {
       icon: <Users size={24} />,
@@ -137,8 +137,8 @@ export default function JeeCoachingPage() {
     },
     {
       icon: <GraduationCap size={24} />,
-      title: "Online CBT Exam Engine",
-      text: "Familiarize yourself with the actual NTA interface using our dynamic computer-based mock testing labs."
+      title: "Smart Learning Tools",
+      text: "Interactive smart boards, diagnostic tools, and mock testing facilities to track your daily progress."
     }
   ];
 
@@ -149,7 +149,7 @@ export default function JeeCoachingPage() {
       description: "Designed for secondary school students. Integrates regular school board curriculum with elite, conceptually heavy competitive training to conquer JEE Main & Advanced.",
       bullets: [
         "CBSE / State school curriculum alignment",
-        "Weekly simulated NTA-style online mock sessions",
+        "Weekly simulated NTA-style mock sessions",
         "Focused workouts on Mathematics and Physics shortcuts",
         "Comprehensive board-exam mock preparation"
       ]
@@ -168,9 +168,9 @@ export default function JeeCoachingPage() {
     {
       title: "JEE Main & Advanced Crash Course",
       duration: "Intensive 45 Days",
-      description: "Launches right after board exams. Focuses heavily on test-taking strategy, high-yield engineering entrance questions, time-saving tricks, and full-length CBT tests.",
+      description: "Launches right after board exams. Focuses heavily on test-taking strategy, high-yield engineering entrance questions, time-saving tricks, and full-length mock tests.",
       bullets: [
-        "Continuous CBT lab practice sessions",
+        "Continuous mock practice sessions",
         "Previous years' JEE question analysis workshops",
         "Short-cut formulas and quick revision sessions",
         "Hybrid online & offline options available"
@@ -192,7 +192,7 @@ export default function JeeCoachingPage() {
   const faqs = [
     {
       question: "What are the JEE & NEET Micro Batches, and how do they benefit students?",
-      answer: "Our JEE & NEET Micro Batches are premium, low-strength class streams capped at 15-20 students. This allows our senior IIT faculty to monitor each student's calculations directly, customize study speed, clear doubts on the spot, and conduct regular progress calls with parents."
+      answer: "Our JEE & NEET Micro Batches are premium, low-strength class streams capped at 15-20 students. This allows our expert faculty to monitor each student's calculations directly, customize study speed, clear doubts on the spot, and conduct regular progress calls with parents."
     },
     {
       question: "How does the MTS mock series compare to the real NTA JEE exam?",
@@ -375,7 +375,7 @@ export default function JeeCoachingPage() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img 
                     src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800" 
-                    alt="Students taking JEE exam online CBT mock tests" 
+                    alt="Students taking JEE exam mock tests" 
                     className={styles.mtsImg}
                   />
                 </div>
@@ -392,9 +392,9 @@ export default function JeeCoachingPage() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                <h2 className={styles.mtsTitle}>Dynamic CBT Mock Testing Engine</h2>
+                <h2 className={styles.mtsTitle}>Dynamic Mock Testing Series</h2>
                 <p className={styles.mtsDesc}>
-                  Our specialized computer-based test platform replicates NTA JEE Main and Advanced portals with 100% fidelity. We train students in formula memory, calculation accuracy, and rapid question filtering to avoid negative marks.
+                  Our specialized mock test series is designed to prepare students for NTA JEE Main and Advanced portals. We train students in formula memory, calculation accuracy, and rapid question filtering to avoid negative marks.
                 </p>
 
                 <div className={styles.featuresList}>
@@ -403,8 +403,8 @@ export default function JeeCoachingPage() {
                       <Award size={18} />
                     </div>
                     <div>
-                      <h4 className={styles.featTitle}>Simulated NTA CBT Interface</h4>
-                      <p className={styles.featText}>Practice on the same dashboard you will encounter on exam day, building comfort and confidence.</p>
+                      <h4 className={styles.featTitle}>Simulated NTA Interface</h4>
+                      <p className={styles.featText}>Practice with the same question patterns you will encounter on exam day, building comfort and confidence.</p>
                     </div>
                   </div>
 

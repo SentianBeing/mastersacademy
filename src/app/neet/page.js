@@ -4,18 +4,18 @@ import React, { useState } from 'react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GoogleReviews from "@/components/GoogleReviews";
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Check, 
-  ChevronDown, 
-  BookOpen, 
-  Award, 
-  Users, 
-  ArrowRight, 
-  GraduationCap, 
-  Star 
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Check,
+  ChevronDown,
+  BookOpen,
+  Award,
+  Users,
+  ArrowRight,
+  GraduationCap,
+  Star
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './page.module.css';
@@ -31,8 +31,8 @@ const heroContainerVariants = {
 
 const heroItemVariants = {
   hidden: { opacity: 0, y: 25 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { type: 'spring', stiffness: 90, damping: 15 }
   }
@@ -40,10 +40,10 @@ const heroItemVariants = {
 
 const fadeUpVariants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.5, ease: "easeOut" } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, ease: "easeOut" }
   }
 };
 
@@ -56,8 +56,8 @@ const staggerContainerVariants = {
 
 const cardItemVariants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { type: 'spring', stiffness: 90, damping: 14 }
   }
@@ -171,7 +171,7 @@ export default function NeetCoachingPage() {
       description: "A fast-paced review program launching right after board exams. Designed to maximize test score potential through quick shortcuts, mock tests, and key concept revisions.",
       bullets: [
         "Phased launch to align with Board exam schedules",
-        "Simulated CBT tests mimicking real NEET exam environment",
+        "Simulated mock tests mimicking real NEET exam environment",
         "Focused study sessions on high-weightage chapters",
         "Affordable pricing with full online and hybrid options"
       ]
@@ -211,11 +211,11 @@ export default function NeetCoachingPage() {
   return (
     <div className={styles.neetPage}>
       <Header />
-      
+
       <main>
         {/* --- Hero Section --- */}
         <section className={styles.heroSection}>
-          <motion.div 
+          <motion.div
             className={`container ${styles.heroContainer}`}
             variants={heroContainerVariants}
             initial="hidden"
@@ -226,15 +226,15 @@ export default function NeetCoachingPage() {
                 <Star size={12} fill="currentColor" />
                 <span>Premier Medical Coaching</span>
               </motion.div>
-              
+
               <motion.h1 className={styles.heroTitle} variants={heroItemVariants}>
                 Conquer NEET. <span className={styles.goldHighlight}>Shape Your Medical Future.</span>
               </motion.h1>
-              
+
               <motion.p className={styles.heroDesc} variants={heroItemVariants}>
                 Empowering medical aspirants in Trivandrum with expert mentoring, rigorous study modules, and result-oriented test formats. Master the concepts and secure your dream medical seat.
               </motion.p>
-              
+
               <motion.div className={styles.heroButtons} variants={heroItemVariants}>
                 <a href="#register" className={styles.btnPrimary}>
                   Enroll Now
@@ -247,7 +247,7 @@ export default function NeetCoachingPage() {
               </motion.div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className={styles.heroVisual}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -256,9 +256,9 @@ export default function NeetCoachingPage() {
               <div className={styles.imageWrapper}>
                 <div className={styles.imageOverlay}></div>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800" 
-                  alt="Medical Student NEET Aspirant" 
+                <img
+                  src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800"
+                  alt="Medical Student NEET Aspirant"
                   className={styles.heroImg}
                 />
               </div>
@@ -269,7 +269,7 @@ export default function NeetCoachingPage() {
         {/* --- Features Section --- */}
         <section className={styles.featuresSection}>
           <div className="container">
-            <motion.div 
+            <motion.div
               className={styles.sectionHeader}
               initial="hidden"
               whileInView="visible"
@@ -279,8 +279,8 @@ export default function NeetCoachingPage() {
               <span className={styles.sectionSubtitle}>Why Choose Master's Academy</span>
               <h2 className={styles.sectionTitle}>The Best NEET Coaching in Trivandrum</h2>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               className={styles.featuresGrid}
               variants={staggerContainerVariants}
               initial="hidden"
@@ -288,8 +288,8 @@ export default function NeetCoachingPage() {
               viewport={{ once: true, margin: "-100px" }}
             >
               {features.map((feat, index) => (
-                <motion.div 
-                  key={index} 
+                <motion.div
+                  key={index}
                   className={styles.featureCard}
                   variants={cardItemVariants}
                   whileHover={{ y: -4, transition: { duration: 0.2 } }}
@@ -308,7 +308,7 @@ export default function NeetCoachingPage() {
         {/* --- Programs Section --- */}
         <section className={styles.programsSection} id="courses">
           <div className="container">
-            <motion.div 
+            <motion.div
               className={styles.sectionHeader}
               initial="hidden"
               whileInView="visible"
@@ -319,7 +319,7 @@ export default function NeetCoachingPage() {
               <h2 className={styles.sectionTitle}>NEET Coaching Programs</h2>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className={styles.programsGrid}
               variants={staggerContainerVariants}
               initial="hidden"
@@ -327,8 +327,8 @@ export default function NeetCoachingPage() {
               viewport={{ once: true, margin: "-100px" }}
             >
               {programs.map((prog, index) => (
-                <motion.div 
-                  key={index} 
+                <motion.div
+                  key={index}
                   className={styles.programCard}
                   variants={cardItemVariants}
                   whileHover={{ y: -4, transition: { duration: 0.2 } }}
@@ -339,7 +339,7 @@ export default function NeetCoachingPage() {
                       <span className={styles.progDuration}>{prog.duration}</span>
                     </div>
                     <p className={styles.progDesc}>{prog.description}</p>
-                    
+
                     <ul className={styles.bulletsList}>
                       {prog.bullets.map((bullet, idx) => (
                         <li key={idx} className={styles.bulletItem}>
@@ -364,7 +364,7 @@ export default function NeetCoachingPage() {
         <section className={styles.mtsSection}>
           <div className="container">
             <div className={styles.mtsContainer}>
-              <motion.div 
+              <motion.div
                 className={styles.mtsVisual}
                 initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -373,9 +373,9 @@ export default function NeetCoachingPage() {
               >
                 <div className={styles.mtsImgWrapper}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800" 
-                    alt="Students taking exam online/offline mock tests" 
+                  <img
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800"
+                    alt="Students taking exam online/offline mock tests"
                     className={styles.mtsImg}
                   />
                 </div>
@@ -385,7 +385,7 @@ export default function NeetCoachingPage() {
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className={styles.mtsContent}
                 initial={{ opacity: 0, x: 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -403,8 +403,8 @@ export default function NeetCoachingPage() {
                       <Award size={18} />
                     </div>
                     <div>
-                      <h4 className={styles.featTitle}>OMR & CBT Mock Practice</h4>
-                      <p className={styles.featText}>Practice on OMR sheets and custom computer-based test engines to remove test-day anxiety.</p>
+                      <h4 className={styles.featTitle}>OMR Mock Practice</h4>
+                      <p className={styles.featText}>Practice on OMR sheets and custom mock test formats to remove test-day anxiety.</p>
                     </div>
                   </div>
 
@@ -436,7 +436,7 @@ export default function NeetCoachingPage() {
         {/* --- FAQ Section --- */}
         <section className={styles.faqSection}>
           <div className="container">
-            <motion.div 
+            <motion.div
               className={styles.sectionHeader}
               initial="hidden"
               whileInView="visible"
@@ -447,7 +447,7 @@ export default function NeetCoachingPage() {
               <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className={styles.faqContainer}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -459,14 +459,14 @@ export default function NeetCoachingPage() {
                   const isOpen = openFaq === index;
                   return (
                     <div key={index} className={styles.faqItem}>
-                      <button 
-                        className={styles.faqHeader} 
+                      <button
+                        className={styles.faqHeader}
                         onClick={() => toggleFaq(index)}
                       >
                         <span>{faq.question}</span>
-                        <ChevronDown 
-                          size={18} 
-                          className={`${styles.faqIcon} ${isOpen ? styles.faqIconActive : ''}`} 
+                        <ChevronDown
+                          size={18}
+                          className={`${styles.faqIcon} ${isOpen ? styles.faqIconActive : ''}`}
                         />
                       </button>
                       <div className={`${styles.faqAnswer} ${isOpen ? styles.faqAnswerOpen : ''}`}>
@@ -486,7 +486,7 @@ export default function NeetCoachingPage() {
         <section className={styles.registerSection} id="register">
           <div className="container">
             <div className={styles.formGrid}>
-              <motion.div 
+              <motion.div
                 className={styles.formInfo}
                 initial={{ opacity: 0, x: -35 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -536,7 +536,7 @@ export default function NeetCoachingPage() {
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className={styles.formCard}
                 initial={{ opacity: 0, x: 35 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -547,39 +547,39 @@ export default function NeetCoachingPage() {
                 <form onSubmit={handleFormSubmit} className={styles.formFields}>
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel} htmlFor="name">Full Name</label>
-                    <input 
-                      type="text" 
-                      id="name" 
-                      name="name" 
-                      value={formData.name} 
-                      onChange={handleInputChange} 
-                      className={styles.formInput} 
-                      placeholder="Enter your name" 
-                      required 
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className={styles.formInput}
+                      placeholder="Enter your name"
+                      required
                     />
                   </div>
 
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel} htmlFor="phone">Mobile Number</label>
-                    <input 
-                      type="tel" 
-                      id="phone" 
-                      name="phone" 
-                      value={formData.phone} 
-                      onChange={handleInputChange} 
-                      className={styles.formInput} 
-                      placeholder="Enter your mobile number" 
-                      required 
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      className={styles.formInput}
+                      placeholder="Enter your mobile number"
+                      required
                     />
                   </div>
 
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel} htmlFor="studentClass">Class/Course Interested</label>
-                    <select 
-                      id="studentClass" 
-                      name="studentClass" 
-                      value={formData.studentClass} 
-                      onChange={handleInputChange} 
+                    <select
+                      id="studentClass"
+                      name="studentClass"
+                      value={formData.studentClass}
+                      onChange={handleInputChange}
                       className={styles.formSelect}
                     >
                       <option value="">Select course option</option>
@@ -605,7 +605,7 @@ export default function NeetCoachingPage() {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );
