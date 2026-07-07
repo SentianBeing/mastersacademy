@@ -30,8 +30,8 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, y: 25 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     y: 0,
     transition: { type: 'spring', stiffness: 100, damping: 15 }
   }
@@ -39,8 +39,8 @@ const itemVariants = {
 
 const visualVariants = {
   hidden: { opacity: 0, scale: 0.95 },
-  visible: { 
-    opacity: 1, 
+  visible: {
+    opacity: 1,
     scale: 1,
     transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }
   }
@@ -48,9 +48,9 @@ const visualVariants = {
 
 const badgeVariants = {
   hidden: { opacity: 0, scale: 0.8, y: 15 },
-  visible: { 
-    opacity: 1, 
-    scale: 1, 
+  visible: {
+    opacity: 1,
+    scale: 1,
     y: 0,
     transition: { type: 'spring', stiffness: 120, delay: 0.6 }
   }
@@ -127,9 +127,9 @@ export default function Home() {
         {/* --- Custom Hero Section --- */}
         <section className={styles.heroSection}>
           <div className={`container ${styles.heroContainer}`}>
-            
+
             {/* Left Content Column */}
-            <motion.div 
+            <motion.div
               className={styles.leftContent}
               variants={containerVariants}
               initial="hidden"
@@ -138,7 +138,7 @@ export default function Home() {
               <motion.h1 className={styles.mainTitle} variants={itemVariants}>
                 Expert Coaching is the best way to <span className={styles.accentText}>Master Your Dreams</span>
               </motion.h1>
-              
+
               <motion.p className={styles.description} variants={itemVariants}>
                 For over 10+ years, Master's Entrance Academy has been the trusted choice in Trivandrum for NEET, JEE, KEAM, and School Tuitions.
               </motion.p>
@@ -161,11 +161,11 @@ export default function Home() {
                 <div className={styles.avatarGroup}>
                   {avatars.map((url, idx) => (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img 
-                      key={idx} 
-                      src={url} 
-                      alt={`Student Reviewer ${idx + 1}`} 
-                      className={styles.avatarImg} 
+                    <img
+                      key={idx}
+                      src={url}
+                      alt={`Student Reviewer ${idx + 1}`}
+                      className={styles.avatarImg}
                     />
                   ))}
                   <div className={styles.plusBadge}>+</div>
@@ -188,7 +188,7 @@ export default function Home() {
             </motion.div>
 
             {/* Right Visual Column */}
-            <motion.div 
+            <motion.div
               className={styles.rightVisual}
               initial="hidden"
               animate="visible"
@@ -201,15 +201,15 @@ export default function Home() {
               {/* Girl Portrait Image cutout */}
               <div className={styles.girlImgWrapper}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img 
-                  src="/images/student-hero2.png" 
-                  alt="Student smiling - Educ platform" 
+                <img
+                  src="/images/student-hero2.png"
+                  alt="Student smiling - Educ platform"
                   className={styles.girlImg}
                 />
               </div>
 
               {/* Floating UI Badge 1 - Masters Academy Stats */}
-              <motion.div 
+              <motion.div
                 className={styles.badgeCoursesWrapper}
                 variants={badgeVariants}
               >
@@ -225,15 +225,15 @@ export default function Home() {
               </motion.div>
 
               {/* Floating UI Badge 2 - NEET/JEE Class Info */}
-              <motion.div 
+              <motion.div
                 className={styles.badgeClassCardWrapper}
                 variants={badgeVariants}
               >
                 <div className={styles.badgeClassCard}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=80" 
-                    alt="Director & Chief Mentor" 
+                  <img
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=80"
+                    alt="Director & Chief Mentor"
                     className={styles.tutorAvatar}
                   />
                   <div className={styles.classDetails}>
@@ -254,7 +254,7 @@ export default function Home() {
         <CoachingCards />
         <SchoolPrograms />
         <MentorsSection />
-        <MentoringPrograms />
+        <MentoringPrograms onEnrollClick={() => setActiveModal('general')} />
         <WhyChooseUs />
         <GoogleReviews />
         <CallEnrollSection onEnrollClick={() => setActiveModal('general')} />
@@ -284,43 +284,43 @@ export default function Home() {
               <div>
                 <h3 className={styles.modalTitle}>Join Master's Academy</h3>
                 <p className={styles.modalSubtitle}>Fill in details to start your enrollment process.</p>
-                
+
                 <form onSubmit={handleModalSubmit} className={styles.modalForm}>
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel} htmlFor="modal-name">Full Name *</label>
-                    <input 
-                      type="text" 
-                      id="modal-name" 
-                      name="name" 
-                      value={modalData.name} 
+                    <input
+                      type="text"
+                      id="modal-name"
+                      name="name"
+                      value={modalData.name}
                       onChange={handleModalInputChange}
                       placeholder="Enter student name"
                       className={styles.modalInput}
-                      required 
+                      required
                     />
                   </div>
 
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel} htmlFor="modal-phone">Phone Number *</label>
-                    <input 
-                      type="tel" 
-                      id="modal-phone" 
-                      name="phone" 
-                      value={modalData.phone} 
+                    <input
+                      type="tel"
+                      id="modal-phone"
+                      name="phone"
+                      value={modalData.phone}
                       onChange={handleModalInputChange}
                       placeholder="Enter mobile number"
                       className={styles.modalInput}
-                      required 
+                      required
                     />
                   </div>
 
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel} htmlFor="modal-email">Email Address (Optional)</label>
-                    <input 
-                      type="email" 
-                      id="modal-email" 
-                      name="email" 
-                      value={modalData.email} 
+                    <input
+                      type="email"
+                      id="modal-email"
+                      name="email"
+                      value={modalData.email}
                       onChange={handleModalInputChange}
                       placeholder="Enter email address"
                       className={styles.modalInput}
@@ -329,10 +329,10 @@ export default function Home() {
 
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel} htmlFor="modal-program">Select Program Type *</label>
-                    <select 
-                      id="modal-program" 
-                      name="programType" 
-                      value={modalData.programType} 
+                    <select
+                      id="modal-program"
+                      name="programType"
+                      value={modalData.programType}
                       onChange={handleModalInputChange}
                       className={styles.modalSelect}
                       required
@@ -346,10 +346,10 @@ export default function Home() {
                   {modalData.programType === 'tuition' && (
                     <div className={styles.formGroup}>
                       <label className={styles.formLabel} htmlFor="modal-class">Class Standard *</label>
-                      <select 
-                        id="modal-class" 
-                        name="classStandard" 
-                        value={modalData.classStandard} 
+                      <select
+                        id="modal-class"
+                        name="classStandard"
+                        value={modalData.classStandard}
                         onChange={handleModalInputChange}
                         className={styles.modalSelect}
                         required
@@ -392,42 +392,42 @@ export default function Home() {
               <div>
                 <h3 className={styles.modalTitle}>NEET & JEE 2026 Admissions</h3>
                 <p className={styles.modalSubtitle}>Request details for medical/engineering entrance coaching batches.</p>
-                
+
                 <form onSubmit={handleModalSubmit} className={styles.modalForm}>
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel} htmlFor="neet-name">Aspirant Name *</label>
-                    <input 
-                      type="text" 
-                      id="neet-name" 
-                      name="name" 
-                      value={modalData.name} 
+                    <input
+                      type="text"
+                      id="neet-name"
+                      name="name"
+                      value={modalData.name}
                       onChange={handleModalInputChange}
                       placeholder="Enter student name"
                       className={styles.modalInput}
-                      required 
+                      required
                     />
                   </div>
 
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel} htmlFor="neet-phone">Mobile Number *</label>
-                    <input 
-                      type="tel" 
-                      id="neet-phone" 
-                      name="phone" 
-                      value={modalData.phone} 
+                    <input
+                      type="tel"
+                      id="neet-phone"
+                      name="phone"
+                      value={modalData.phone}
                       onChange={handleModalInputChange}
                       placeholder="Enter parent or student mobile number"
                       className={styles.modalInput}
-                      required 
+                      required
                     />
                   </div>
 
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel} htmlFor="neet-batch">Select Target Batch *</label>
-                    <select 
-                      id="neet-batch" 
-                      name="classStandard" 
-                      value={modalData.classStandard} 
+                    <select
+                      id="neet-batch"
+                      name="classStandard"
+                      value={modalData.classStandard}
                       onChange={handleModalInputChange}
                       className={styles.modalSelect}
                       required
@@ -442,11 +442,11 @@ export default function Home() {
 
                   <div className={styles.formGroup}>
                     <label className={styles.formLabel} htmlFor="neet-email">Email Address (Optional)</label>
-                    <input 
-                      type="email" 
-                      id="neet-email" 
-                      name="email" 
-                      value={modalData.email} 
+                    <input
+                      type="email"
+                      id="neet-email"
+                      name="email"
+                      value={modalData.email}
                       onChange={handleModalInputChange}
                       placeholder="Enter email address"
                       className={styles.modalInput}

@@ -5,7 +5,7 @@ import { ArrowRight, Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './MentoringPrograms.module.css';
 
-export default function MentoringPrograms() {
+export default function MentoringPrograms({ onEnrollClick }) {
   const microbatchFeatures = [
     "Limited Students per Batch",
     "Personalised Attention",
@@ -24,7 +24,7 @@ export default function MentoringPrograms() {
     <section className={styles.mentoringSection}>
       <div className={`container ${styles.doubleGrid}`}>
         {/* Card 1: Microbatch Programs */}
-        <motion.div 
+        <motion.div
           id="microbatch"
           className={styles.microbatchCard}
           initial={{ opacity: 0, x: -45 }}
@@ -36,7 +36,7 @@ export default function MentoringPrograms() {
           <div className={styles.cardContent}>
             <span className={styles.cardSub}>MICROBATCH PROGRAMS</span>
             <h2 className={styles.cardTitle}>Small Batch. Big Impact.</h2>
-            
+
             <ul className={styles.featureList}>
               {microbatchFeatures.map((feat, idx) => (
                 <li key={idx} className={styles.featureItem}>
@@ -48,14 +48,23 @@ export default function MentoringPrograms() {
               ))}
             </ul>
 
-            <a href="#enroll" className={styles.whiteBtn}>
+            <a
+              href="#enroll"
+              onClick={(e) => {
+                if (onEnrollClick) {
+                  e.preventDefault();
+                  onEnrollClick();
+                }
+              }}
+              className={styles.whiteBtn}
+            >
               Enroll Now
               <ArrowRight size={16} className={styles.arrowMaroon} />
             </a>
           </div>
 
           {/* Floating Badge */}
-          <motion.div 
+          <motion.div
             className={styles.floatingBadge}
             initial={{ scale: 0.8, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
@@ -71,7 +80,7 @@ export default function MentoringPrograms() {
         </motion.div>
 
         {/* Card 2: One-to-One Mentoring */}
-        <motion.div 
+        <motion.div
           id="one-to-one"
           className={styles.onetooneCard}
           initial={{ opacity: 0, x: 45 }}
@@ -82,7 +91,7 @@ export default function MentoringPrograms() {
           <div className={styles.cardContent}>
             <span className={styles.cardSubMaroon}>ONE-TO-ONE MENTORING</span>
             <h2 className={styles.cardTitleDark}>100% Personalised Learning</h2>
-            
+
             <ul className={styles.featureList}>
               {onetooneFeatures.map((feat, idx) => (
                 <li key={idx} className={styles.featureItemDark}>
@@ -94,7 +103,16 @@ export default function MentoringPrograms() {
               ))}
             </ul>
 
-            <a href="#book-session" className={styles.maroonBtn}>
+            <a
+              href="#book-session"
+              onClick={(e) => {
+                if (onEnrollClick) {
+                  e.preventDefault();
+                  onEnrollClick();
+                }
+              }}
+              className={styles.maroonBtn}
+            >
               Book a Session
               <ArrowRight size={16} className={styles.arrowWhite} />
             </a>
@@ -102,9 +120,9 @@ export default function MentoringPrograms() {
 
           <div className={styles.mentorImageContainer}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=400" 
-              alt="One-to-One Mentoring Session" 
+            <img
+              src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=400"
+              alt="One-to-One Mentoring Session"
               className={styles.mentorImg}
             />
           </div>

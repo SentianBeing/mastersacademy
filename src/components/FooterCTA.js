@@ -5,7 +5,7 @@ import { Phone, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import styles from './FooterCTA.module.css';
 
-export default function FooterCTA() {
+export default function FooterCTA({ onEnrollClick }) {
   const stats = [
     { num: "10+", label: "Years" },
     { num: "10000+", label: "Students" },
@@ -21,7 +21,7 @@ export default function FooterCTA() {
 
       <div className={`container ${styles.ctaContainer}`}>
         {/* Left: Text Info */}
-        <motion.div 
+        <motion.div
           className={styles.textSide}
           initial={{ opacity: 0, x: -35 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -35,9 +35,18 @@ export default function FooterCTA() {
           <p className={styles.ctaSub}>
             Limited Seats. Great Opportunities Await!
           </p>
-          
+
           <div className={styles.btnRow}>
-            <a href="#enquire" className={styles.pillWhite}>
+            <a
+              href="#enquire"
+              onClick={(e) => {
+                if (onEnrollClick) {
+                  e.preventDefault();
+                  onEnrollClick();
+                }
+              }}
+              className={styles.pillWhite}
+            >
               Enquire Now
               <ArrowRight size={14} className={styles.arrowIcon} />
             </a>
@@ -49,7 +58,7 @@ export default function FooterCTA() {
         </motion.div>
 
         {/* Right: Circular Badge Stats */}
-        <motion.div 
+        <motion.div
           className={styles.statsSide}
           variants={{
             hidden: {},
@@ -64,13 +73,13 @@ export default function FooterCTA() {
           viewport={{ once: true, margin: "-100px" }}
         >
           {stats.map((stat, idx) => (
-            <motion.div 
-              key={idx} 
+            <motion.div
+              key={idx}
               className={styles.statCircle}
               variants={{
                 hidden: { opacity: 0, scale: 0.75 },
-                visible: { 
-                  opacity: 1, 
+                visible: {
+                  opacity: 1,
                   scale: 1,
                   transition: { type: 'spring', stiffness: 100, damping: 12 }
                 }
