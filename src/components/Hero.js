@@ -90,10 +90,10 @@ export default function Hero() {
 
             {/* Hero Image */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="https://res.cloudinary.com/der2xk0cv/image/upload/v1781810033/Removal-647_ikjbyd.png" 
-              alt="Jomon K. Thomas - Chief Mentor"
-              className={styles.heroImage} 
+            <img
+              src="https://res.cloudinary.com/der2xk0cv/image/upload/v1781810033/Removal-647_ikjbyd.png"
+              alt="Nagarajan R - Chief Mentor"
+              className={styles.heroImage}
             />
 
             {/* Mentor Info Badge */}
@@ -103,7 +103,7 @@ export default function Hero() {
               <div className={styles.cursiveCall}>
                 Call Us: Trivandrum
               </div>
-              <div className={styles.mentorName}>Jomon K. Thomas</div>
+              <div className={styles.mentorName}>Nagarajan R</div>
               <div className={styles.mentorTitle}>(Director & Chief Mentor)</div>
             </div>
           </div>

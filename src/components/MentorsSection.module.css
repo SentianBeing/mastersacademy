@@ -269,7 +269,7 @@
   .sectionWrapper {
     height: auto;
     overflow: hidden; /* Prevent leaking on mobile stack */
-    padding: 50px 0;
+    padding: 50px 0 0 0;
   }
 
   .sectionContainer {
@@ -284,6 +284,7 @@
     text-align: center;
     padding: 0;
     width: 100%;
+    order: 1;
   }
 
   .heading {
@@ -302,6 +303,7 @@
     height: auto;
     width: 100%;
     align-items: center;
+    order: 3;
   }
 
   .directorImgWrapper {
@@ -313,25 +315,30 @@
 
   .directorImg {
     max-height: 320px;
+    display: block;
+    margin-bottom: -1px;
   }
 
   .rightCol {
     width: 100%;
     justify-content: center;
+    order: 2;
   }
 
   .speechBubble {
     margin-left: 0;
-    margin-top: 15px;
+    margin-top: 0;
   }
 
   .speechBubble::before {
-    top: -7px;
+    top: auto;
+    bottom: -7px;
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
-    border-left: 1px solid rgba(255, 255, 255, 0.12);
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    border-bottom: none;
-    border-right: none;
+    background-color: var(--maroon-dark);
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-left: none;
+    border-top: none;
   }
 }

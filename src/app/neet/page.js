@@ -162,7 +162,7 @@ export default function NeetCoachingPage() {
         "Full-time regular offline classes with rigorous schedules",
         "Premium accommodation and separate hostel facilities",
         "High-difficulty question solving and shortcut workshops",
-        "Individual chief-mentorship under Jomon K. Thomas"
+        "Individual chief-mentorship under Nagarajan R"
       ]
     },
     {

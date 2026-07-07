@@ -61,9 +61,9 @@ export default function MentorsSection() {
       </div>
 
       <div className={`container ${styles.sectionContainer}`}>
-        
+
         {/* Left Content Side */}
-        <motion.div 
+        <motion.div
           className={styles.leftCol}
           variants={containerVariants}
           initial="hidden"
@@ -78,8 +78,8 @@ export default function MentorsSection() {
 
           <div className={styles.pointsList}>
             {points.map((point, idx) => (
-              <motion.div 
-                key={idx} 
+              <motion.div
+                key={idx}
                 className={styles.pointRow}
                 variants={itemVariants}
               >
@@ -100,7 +100,7 @@ export default function MentorsSection() {
         </motion.div>
 
         {/* Center: Director Cutout Image */}
-        <motion.div 
+        <motion.div
           className={styles.centerCol}
           variants={imageVariants}
           initial="hidden"
@@ -109,16 +109,16 @@ export default function MentorsSection() {
         >
           <div className={styles.directorImgWrapper}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="https://res.cloudinary.com/der2xk0cv/image/upload/v1781878748/ffggh_uml335.png" 
-              alt="Jomon K. Thomas - Director" 
+            <img
+              src="https://res.cloudinary.com/der2xk0cv/image/upload/v1781878748/ffggh_uml335.png"
+              alt="Nagarajan R - Director"
               className={styles.directorImg}
             />
           </div>
         </motion.div>
 
         {/* Right: Info speech bubble */}
-        <motion.div 
+        <motion.div
           className={styles.rightCol}
           variants={bubbleVariants}
           initial="hidden"
@@ -126,12 +126,12 @@ export default function MentorsSection() {
           viewport={{ once: true, margin: "-100px" }}
         >
           <div className={styles.speechBubble}>
-            <div className={styles.signatureText}>Jomon K. Thomas</div>
-            <div className={styles.mentorName}>Jomon K. Thomas</div>
+            <div className={styles.signatureText}>Nagarajan R</div>
+            <div className={styles.mentorName}>Nagarajan R</div>
             <div className={styles.mentorTitle}>Director & Chief Mentor</div>
-            
+
             <div className={styles.divider}></div>
-            
+
             <div className={styles.bubbleDetails}>
               <div className={styles.detailRow}>
                 <span className={styles.detailText}>10+ Years Experience</span>

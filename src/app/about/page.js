@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <div className={styles.aboutPage}>
       <Header />
-      
+
       <main>
         {/* --- Section 1: Hero Section (Reused home2/old home hero) --- */}
         <Hero />
@@ -25,7 +25,7 @@ export default function AboutPage() {
         <section className={styles.bestCoachingSection}>
           <div className="container">
             <div className={styles.gridContainer}>
-              <motion.div 
+              <motion.div
                 className={styles.contentCol}
                 initial={{ opacity: 0, x: -35 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -36,15 +36,15 @@ export default function AboutPage() {
                   <Award size={14} className={styles.badgeIcon} />
                   <span>Trivandrum's Leading Academy</span>
                 </div>
-                
+
                 <h2 className={styles.heading}>
                   Why We Are the <span className={styles.goldText}>Best Entrance Coaching Centre</span> in Trivandrum
                 </h2>
-                
+
                 <p className={styles.desc}>
                   At Masters Entrance Academy, we do not believe in mass-factory schooling. Our reputation as the best entrance coaching centre in Trivandrum is built on a single core principle: <strong>uncompromised personal attention</strong>. We bridge the gap between heavy academic theory and actual competitive problem-solving speed.
                 </p>
-                
+
                 <div className={styles.pointsList}>
                   <div className={styles.pointItem}>
                     <div className={styles.pointIcon}>
@@ -65,14 +65,14 @@ export default function AboutPage() {
                     <div>
                       <h4 className={styles.pointTitle}>Elite Faculty & Director Mentoring</h4>
                       <p className={styles.pointText}>
-                        Led directly by Jomon K. Thomas (Director & Chief Mentor), our team consists of veteran entrance experts who have spent over a decade training students for medical and engineering seats.
+                        Led directly by Nagarajan R (Director & Chief Mentor), our team consists of veteran entrance experts who have spent over a decade training students for medical and engineering seats.
                       </p>
                     </div>
                   </div>
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 className={styles.imageCol}
                 initial={{ opacity: 0, x: 35 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -81,9 +81,9 @@ export default function AboutPage() {
               >
                 <div className={styles.imageWrapper}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img 
-                    src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800" 
-                    alt="Classroom training at Masters Entrance Academy" 
+                  <img
+                    src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800"
+                    alt="Classroom training at Masters Entrance Academy"
                     className={styles.classroomImg}
                   />
                   <div className={styles.glassBadge}>
@@ -96,7 +96,7 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
-      
+
       <Footer />
     </div>
   );
