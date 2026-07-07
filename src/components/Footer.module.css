@@ -1,5 +1,6 @@
 .footerWrapper {
-  background-color: #3b000d; /* even darker maroon for depth */
+  background-color: #3b000d;
+  /* even darker maroon for depth */
   color: rgba(255, 255, 255, 0.85);
   padding: 70px 0 0 0;
   border-top: 2px solid rgba(255, 255, 255, 0.05);
@@ -200,7 +201,7 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
   }
-  
+
   .brandCol {
     grid-column: span 3;
     max-width: 500px;
@@ -212,16 +213,16 @@
   .footerGrid {
     grid-template-columns: 1fr 1fr;
   }
-  
+
   .brandCol {
     grid-column: span 2;
   }
-  
+
   .mapCol {
     grid-column: span 2;
     max-width: 320px;
   }
-  
+
   .bottomContainer {
     flex-direction: column;
     text-align: center;
@@ -233,8 +234,9 @@
   .footerGrid {
     grid-template-columns: 1fr;
   }
-  
-  .brandCol, .mapCol {
+
+  .brandCol,
+  .mapCol {
     grid-column: span 1;
   }
 }
@@ -256,8 +258,6 @@
   right: 24px;
   width: 56px;
   height: 56px;
-  background-color: #25d366;
-  color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -269,6 +269,36 @@
 
 .whatsappFloat:hover {
   transform: scale(1.08) translateY(-2px);
-  background-color: #20ba5a;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.whatsappIconImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* Floating Sticky Phone Button */
+.phoneFloat {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  width: 56px;
+  height: 56px;
+  background-color: var(--maroon-medium);
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.phoneFloat:hover {
+  transform: scale(1.08) translateY(-2px);
+  background-color: var(--maroon-dark);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 }
